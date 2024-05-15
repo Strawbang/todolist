@@ -1,4 +1,8 @@
+import { ApiProperty } from "@nestjs/swagger";
+
 export class LoginRequestUser {
-   readonly username: string;
-   readonly password: string;
- }
+  @ApiProperty()
+  readonly username: string;
+  @ApiProperty()
+  readonly password: string;
+}
