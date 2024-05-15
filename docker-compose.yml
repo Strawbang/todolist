@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # nestjs:
+  #   container_name: nestjs
+  #   build:
+  #     context: ./apps/api
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - '3003:3003'
+  #   depends_on:
+  #     - mongodb
+
+  # nextjs:
+  #   container_name: nextjs
+  #   build:
+  #     context: ./apps/web
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - '4000:4000'
+  #   environment:
+  #     - API_URL=http://nestjs:3003
+  #   depends_on:
+  #     - nestjs
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_BASICAUTH: true
+
+volumes:
+  mongodb_data:

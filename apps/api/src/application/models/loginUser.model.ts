@@ -1,4 +1,4 @@
-export class CreateRequestUser {
+export class LoginRequestUser {
    readonly username: string;
    readonly password: string;
  }
