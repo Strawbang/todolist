@@ -1,7 +1,7 @@
+import { UserService } from '@application/services/user.service';
+import { User } from '@domain/entities/user.entity';
+import { UserRepositoryInterface } from '@domain/interfaces/user.repository.interface';
 import { Test, TestingModule } from '@nestjs/testing';
-import { User } from '../../domain/entities/user.entity';
-import { UserRepositoryInterface } from '../../domain/interfaces/user.repository.interface';
-import { UserService } from './user.service';
 
 // Mock User Repository
 const mockUserRepository = {

@@ -1,4 +1,4 @@
-import { UserServiceInterface } from '../../src/application/interfaces/user.service.interface';
+import { UserServiceInterface } from '../../src/domain/interfaces/user.service.interface';
 
 export const mockUserService: Partial<UserServiceInterface> = {
   register: jest.fn().mockImplementation((username: string, password: string) => {

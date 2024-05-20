@@ -1,9 +1,9 @@
+import { UserController } from '@application/controllers/user.controller';
+import { CreateRequestUser } from '@application/dtos/createUser.model';
+import { LoginRequestUser } from '@application/dtos/loginUser.model';
+import { UserServiceInterface } from '@domain/interfaces/user.service.interface';
 import { Test, TestingModule } from '@nestjs/testing';
-import { mockUserService } from '../../../test/mocks/mock.user.service';
-import { UserController } from '../controllers/user.controller';
-import { UserServiceInterface } from '../interfaces/user.service.interface';
-import { CreateRequestUser } from '../models/createUser.model';
-import { LoginRequestUser } from '../models/loginUser.model';
+import { mockUserService } from '../mocks/mock.user.service';
 
 describe('UserController', () => {
 let userController: UserController;
